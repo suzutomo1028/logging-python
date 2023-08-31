@@ -1,0 +1,36 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "fmt": {
+            "format": "%(asctime)s %(name)s [%(levelname)s] %(message)s"
+        }
+    },
+    "handlers": {
+        "stream_handler": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "fmt"
+        },
+        "file_handler": {
+            "class": "logging.FileHandler",
+            "level": "ERROR",
+            "formatter": "fmt",
+            "filename": "logging_05.log",
+            "mode": "w",
+            "encoding": "utf-8"
+        }
+    },
+    "loggers": {
+        "Logger_A": {
+            "level": "DEBUG",
+            "handlers": ["stream_handler"],
+            "propagate": false
+        },
+        "Logger_B": {
+            "level": "WARNING",
+            "handlers": ["file_handler"],
+            "propagate": false
+        }
+    }
+}
